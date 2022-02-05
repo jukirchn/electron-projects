@@ -95,16 +95,17 @@ ipcMain.on('save', (event, arg) => {
 
 
     dialog.showSaveDialog(window, options, filename => {
-        console.log('It worked!!!');
-        if (filename) {
-            console.log('Saving content to the file: ${filename}');
-            fs.writeFileSync(filename, arg);
-        }
+        // This is not executed for some reason.
+        console.log(filename);
+        // if (filename) {
+        //     console.log('Saving content to the file: ${filename}');
+        //     fs.writeFileSync(filename, arg);
+        // }
     });
 });
 
 ipcMain.on('editor-reply', (event, arg) => {
-    console.log('Received reply from web page: ${arg}');
+    console.log('Received reply from web page: ' + arg);
 });
 
 
